@@ -5,12 +5,7 @@ import pandas as pd
 # Set page title
 st.set_page_config(layout="wide",page_title='My Resume')
 
-
-
-
 # Set page header and profile picture
-
-
 # Create sidebar navigation with profile picture
 # Define the CSS styling for the circular profile picture
 css = """
