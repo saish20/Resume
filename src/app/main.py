@@ -31,7 +31,7 @@ st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/saish-mayekar-a95051
 
 st.sidebar.download_button(
     label="Download Resume",
-    data=open('src/data/SaishMayekar_Nov22.pdf', "rb").read(),
+    data=open('src/data/SaishMayekar_June23.pdf', "rb").read(),
     file_name="SaishMayekar.pdf",
     mime="application/pdf",
 )
