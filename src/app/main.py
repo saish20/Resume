@@ -37,7 +37,20 @@ st.sidebar.download_button(
 )
 
 st.header('About')
-st.write('Saish is a Consulting Analyst at PA Consulting working in a Data Scientist capacity. He has over 6 years of experience as a software developer and has an MSc in Data Analytics from the University of Sheffield. With his background in engineering, coupled with his advanced data science education and experience, he is able to approach complex data problems with both a technical and analytical mindset. He is am passionate about using data to drive business decisions and improve processes, and is always looking for new challenges and opportunities to grow my skills.')
+st.write("""
+Saish is a highly skilled postgraduate with a specialization in Data Science and Machine Learning, focusing on PA's Analytics capability. With a strong background in Engineering and Mathematics, Saish demonstrates proficiency in Python, SQL, and Excel. He possesses a comprehensive understanding of data science techniques and has hands-on experience with visualization tools such as Tableau and Google Looker.
+
+Saish has gained valuable experience in the financial regulation domain, where he successfully developed a quality assurance tool. This involved utilizing various techniques including data extraction, web scraping, and text comparison. Additionally, he undertook the task of enhancing a global market screening tool by transitioning it from Excel to Python and Streamlit. Furthermore, Saish has worked on Azure Data Factory, where he built the client and standard pipeline for two Hospital Trusts, and on Azure Functions, creating a PDF encrypting tool through Microsoft Power Automate. Currently, Saish is engaged in an exciting project involving Generative AI, where he is implementing Natural Language Query (NLQ) techniques.
+
+During his university coursework, Saish showcased his expertise by implementing Active Learning strategies for a Lifelong Learning Machine Translation system. This involved working with the English-German corpus and resulted in significant improvements in the translation system. Furthermore, Saish has built end-to-end machine learning pipelines through various projects, showcasing his ability to deliver comprehensive solutions.
+""")
+
+st.header('Education')
+text = f"**{'Masters'}**, *{'Data Analytics'}*"
+st.markdown(f"{text}, \n The University of Sheffield, 2021")
+
+text = f"**{'Bachelor of Engineering'}**, *{'Electronics & Telecommunications'}*"
+st.markdown(f"{text}, \n Mumbai University, 2014")
 
 st.header('Work Experience')
 
@@ -65,15 +78,6 @@ if timeline:
     st.markdown(f"{df_filtered.iloc[0,-1]}")
 else:
     st.write('Select an item to view in detail')
-
-
-st.header('Education')
-text = f"**{'Masters'}**, *{'Data Analytics'}*"
-st.markdown(f"{text}, \n The University of Sheffield, 2021")
-
-text = f"**{'Bachelor of Engineering'}**, *{'Electronics & Telecommunications'}*"
-st.markdown(f"{text}, \n Mumbai University, 2014")
-
 
 
 st.header('Projects')
