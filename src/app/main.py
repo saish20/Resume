@@ -41,7 +41,7 @@ st.write('Saish is a Consulting Analyst at PA Consulting working in a Data Scien
 
 st.header('Work Experience')
 
-df_exp = pd.read_excel("src/data/experience.xlsx")
+df_exp = pd.read_excel("src/data/Experience.xlsx")
 df_exp['Description'] = df_exp['Description'].str.replace('•', '\n•')
 
 # convert the date column to string format with yyyy-mm-dd format
