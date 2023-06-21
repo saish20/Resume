@@ -79,7 +79,6 @@ if timeline:
 else:
     st.write('Select an item to view in detail')
 
-
 st.header('Projects')
 st.subheader('[Lyrics Search App](https://github.com/saish20/FindLyrics)')
 st.write('A simple Streamlit app that allows users to search for song lyrics using the Genius API.')
