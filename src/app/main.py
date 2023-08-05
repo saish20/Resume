@@ -57,27 +57,34 @@ st.header('Work Experience')
 df_exp = pd.read_excel("src/data/Experience.xlsx")
 df_exp['Description'] = df_exp['Description'].str.replace('•', '\n•')
 
-# convert the date column to string format with yyyy-mm-dd format
-df_exp['Start_Date'] = df_exp['Start_Date'].dt.strftime('%Y-%m-%d')
 
-timeline_data = []
-i =0
-for index, row in df_exp.iterrows():
-    i += 1
-    timeline_data.append({
-        "id": i, "content": row["Company"], "start": row["Start_Date"]
-    })
+for index, row in reversed(list(df_exp.iterrows())):
+    start_date = row['Start_Date'].strftime('%b %Y')
+    end_date = row['End_Date'].strftime('%b %Y') if not pd.isnull(row['End_Date']) else "Present"
+    with st.expander(f"{row['Title']} at {row['Company']} ({start_date} to {end_date})"):
+        st.write(f"Description: {row['Description']}")
 
-timeline_data_output = st_timeline(timeline_data, groups=[], options={}, height="300px")
-if timeline_data_output:  
-    st.session_state["timeline"]  = timeline_data_output
-    df_filtered = df_exp[df_exp["Company"] == timeline_data_output["content"]]    
-    formatted_string = f"**{df_filtered.iloc[0,0]}**, *{df_filtered.iloc[0,1]}*"
-    st.header(formatted_string)
-    st.subheader("Responsibilities: \n",)
-    st.markdown(f"{df_filtered.iloc[0,-1]}")
-else:
-    st.write('Select an item to view in detail')
+# # convert the date column to string format with yyyy-mm-dd format
+# df_exp['Start_Date'] = df_exp['Start_Date'].dt.strftime('%Y-%m-%d')
+
+# timeline_data = []
+# i =0
+# for index, row in df_exp.iterrows():
+#     i += 1
+#     timeline_data.append({
+#         "id": i, "content": row["Company"], "start": row["Start_Date"]
+#     })
+
+# timeline_data_output = st_timeline(timeline_data, groups=[], options={}, height="300px")
+# if timeline_data_output:  
+#     st.session_state["timeline"]  = timeline_data_output
+#     df_filtered = df_exp[df_exp["Company"] == timeline_data_output["content"]]    
+#     formatted_string = f"**{df_filtered.iloc[0,0]}**, *{df_filtered.iloc[0,1]}*"
+#     st.header(formatted_string)
+#     st.subheader("Responsibilities: \n",)
+#     st.markdown(f"{df_filtered.iloc[0,-1]}")
+# else:
+#     st.write('Select an item to view in detail')
 
 st.header('Recent Side Projects')
 st.subheader('[Lyrics Search App](https://github.com/saish20/FindLyrics)')
