@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_timeline import st_timeline
 import pandas as pd
 
 # Set page title
