@@ -68,10 +68,10 @@ for index, row in df_exp.iterrows():
         "id": i, "content": row["Company"], "start": row["Start_Date"]
     })
 
-timeline = st_timeline(timeline_data, groups=[], options={}, height="300px")
-if timeline:  
-    st.session_state["timeline"]  = timeline
-    df_filtered = df_exp[df_exp["Company"] == timeline["content"]]    
+timeline_data_output = st_timeline(timeline_data, groups=[], options={}, height="300px")
+if timeline_data_output:  
+    st.session_state["timeline"]  = timeline_data_output
+    df_filtered = df_exp[df_exp["Company"] == timeline_data_output["content"]]    
     formatted_string = f"**{df_filtered.iloc[0,0]}**, *{df_filtered.iloc[0,1]}*"
     st.header(formatted_string)
     st.subheader("Responsibilities: \n",)
